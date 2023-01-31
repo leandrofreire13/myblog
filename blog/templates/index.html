@@ -28,11 +28,11 @@
     <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-md-8 mt-3 left">
-            <h5>Últimas notícias</h5>
             {% for post in post_list %}
             <div class="card mb-4">
                 <div class="card-body">
-                    <h2 class="card-title">{{ post.title }}</h2>
+                    <img class="card-img-top" src="media/{{ post.imagem }}" alt="">
+                    <h2 class="card-title" style="padding: 20px 0 0 0;">{{ post.title }}</h2>
                     <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
                     <p class="card-text">{{post.content|slice:":200" }}...</p>
                     <a href="{% url 'post_detail' post.slug  %}" class="btn btn-danger">Continuar &rarr;</a>
